@@ -1,0 +1,66 @@
+:root {
+  --text-primary: #000000;
+  --text-ok: green;
+  --text-secondary: #333333;
+  --main-color: #ffffff;
+  --secondary-color: #f2f2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #ffffff;
+    --text-ok: lime;
+    --text-secondary: #aaaaaa;
+    --main-color: #101010;
+    --secondary-color: #303030;
+  }
+}
+
+html {
+  font-family: Arial;
+  color: var(--text-primary);
+  background-color: var(--main-color);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  user-select: none;
+}
+header img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+.warning {
+  color: orange;
+}
+.ok {
+  color: var(--text-ok);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+section {
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1000px;
+}
+#pingChart {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
