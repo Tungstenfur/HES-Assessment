@@ -18,7 +18,7 @@ tree = app_commands.CommandTree(client)
 
 async def get_status():
     headers = {
-        #"Authorization": API_KEY
+        "Authorization": API_KEY
     }
 
     async with aiohttp.ClientSession() as session:
