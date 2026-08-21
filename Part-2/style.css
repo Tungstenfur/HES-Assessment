@@ -4,6 +4,7 @@
   --text-secondary: #333333;
   --main-color: #ffffff;
   --secondary-color: #f2f2f2;
+  --form-border-color: #aaaaaa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,7 @@
     --text-secondary: #aaaaaa;
     --main-color: #101010;
     --secondary-color: #303030;
+    --form-border-color: #555555;
   }
 }
 
@@ -25,7 +27,8 @@ html {
   margin: 0;
   padding: 0;
 }
-header {
+header,
+footer {
   background-color: var(--secondary-color);
   display: flex;
   align-items: center;
@@ -38,11 +41,24 @@ header img {
   height: auto;
   margin-right: 10px;
 }
-.warning {
+.warn {
   color: orange;
+}
+.error {
+  color: red;
+}
+.fatal {
+  color: red;
+  background-color: var(--text-secondary);
 }
 .ok {
   color: var(--text-ok);
+}
+.maintenance {
+  color: #ff00ff;
+}
+.info {
+  color: var(--text-secondary);
 }
 main {
   display: flex;
@@ -58,9 +74,53 @@ section {
   border-radius: 10px;
   width: 90%;
   max-width: 1000px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 #pingChart {
   max-width: 100%;
   height: auto;
   max-height: 300px;
+}
+/*
+Source - https://stackoverflow.com/a/4932321
+Posted by RoToRa, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-21, License - CC BY-SA 4.0
+*/
+
+table {
+  border-collapse: separate;
+  border: solid var(--form-border-color) 2px;
+  border-radius: 6px;
+  border-spacing: 0.9px;
+}
+
+td,
+th {
+  border-left: solid var(--form-border-color) 2px;
+  border-top: solid var(--form-border-color) 2px;
+}
+
+th {
+  border-top: none;
+}
+
+td:first-child,
+th:first-child {
+  border-left: none;
+}
+/* End of paste */
+table {
+  width: 100%;
+}
+td,
+th {
+  padding: 10px;
+}
+thead:nth-child(1) th {
+  width: 70%;
+}
+#logs {
+  text-align: left;
+  overflow: auto;
+  max-height: 50vh;
 }

@@ -16,10 +16,59 @@
     <main>
       <section id="overview">
         <h2>Overview</h2>
-        <h3>Overall Status: <span class="warning">Degraded</span></h3>
+        <h3>Overall Status: <span class="warn">Degraded</span></h3>
         <h3>Average Response Time: <span class="ok">121 ms</span></h3>
         <canvas id="pingChart"></canvas>
       </section>
+      <section id="details">
+        <h2>Details</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Status</th>
+              <th>Response Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Main API</td>
+              <td><span class="ok">OK</span></td>
+              <td>121 ms</td>
+            </tr>
+            <tr>
+              <td>Roblox API</td>
+              <td><span class="ok">OK</span></td>
+              <td>55 ms</td>
+            </tr>
+            <tr>
+              <td>Discord bot</td>
+              <td><span class="warn">Degraded</span></td>
+              <td>978 ms</td>
+            </tr>
+            <tr>
+              <td>Some service</td>
+              <td><span class="error">Down</span></td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Website</td>
+              <td><span class="ok">OK</span></td>
+              <td>110 ms</td>
+            </tr>
+            <tr>
+              <td>Instructor bot</td>
+              <td><span class="maintenance">Maintenance</span></td>
+              <td>N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Logs</h2>
+        <div id="logs"></div>
+      </section>
     </main>
+    <footer>Made by tungsten for HES Assessment</footer>
   </body>
 </html>
