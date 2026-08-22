@@ -7,15 +7,13 @@
   --form-border-color: #aaaaaa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-primary: #ffffff;
-    --text-ok: lime;
-    --text-secondary: #aaaaaa;
-    --main-color: #101010;
-    --secondary-color: #303030;
-    --form-border-color: #555555;
-  }
+:root.darkModel {
+  --text-primary: #ffffff;
+  --text-ok: lime;
+  --text-secondary: #aaaaaa;
+  --main-color: #101010;
+  --secondary-color: #303030;
+  --form-border-color: #555555;
 }
 
 html {
@@ -26,6 +24,9 @@ html {
 * {
   margin: 0;
   padding: 0;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
 }
 header,
 footer {
@@ -123,4 +124,21 @@ thead:nth-child(1) th {
   text-align: left;
   overflow: auto;
   max-height: 50vh;
+}
+#modeSwitch {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#modeSwitch i {
+  font-size: 24px;
+  fill: var(--main-color);
 }

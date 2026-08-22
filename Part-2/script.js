@@ -42,12 +42,23 @@ async function DownloadLogs() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (prefersDark) {
+    document.documentElement.classList.add("darkModel");
+  }
   const generateRandomIntArray = (length, min, max) =>
     Array.from(
       { length },
       () => Math.floor(Math.random() * (max - min + 1)) + min,
     );
-
+  const modeSwitch = document.getElementById("modeSwitch");
+  modeSwitch.addEventListener("click", function () {
+    if (document.documentElement.classList.contains("darkModel")) {
+      document.documentElement.classList.remove("darkModel");
+    } else {
+      document.documentElement.classList.add("darkModel");
+    }
+  });
   const numberOfHours = 24;
   const currentFullHour = new Date();
   currentFullHour.setMinutes(0, 0, 0);
